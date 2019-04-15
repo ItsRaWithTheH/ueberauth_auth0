@@ -49,6 +49,7 @@ defmodule Ueberauth.Strategy.Auth0.OAuth do
     |> options()
     |> Keyword.merge(opts)
     |> Client.new
+    |> Client.put_serializer("application/json", Jason)
   end
 
   @doc """
