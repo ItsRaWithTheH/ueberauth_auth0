@@ -135,7 +135,10 @@ defmodule Ueberauth.Strategy.Auth0 do
       location: user["locale"],
       first_name: user["given_name"],
       last_name: user["family_name"],
-      image: user["picture"]
+      image: user["picture"],
+      urls: %{
+        user_metadata: user["https://daivergent:auth0:com:user_metadata"]
+      }
     }
   end
 
